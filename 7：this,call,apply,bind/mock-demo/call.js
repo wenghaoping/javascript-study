@@ -9,6 +9,7 @@ Function.prototype.call3 = function(context = window, ...args) {
     delete context.fn;
     return result;
 };
+// 如果不允许使用...
 Function.prototype.call4 = function (context) {
     var context = context || window;
     context.fn = this;
@@ -23,7 +24,7 @@ Function.prototype.call4 = function (context) {
 Function.prototype.myCall = function(context) {
     context = context ? Object(context) : window
     context.fn = this
-    let args = [...arguments].slice(1)
+    let args = [...arguments].slice(1) // 获取第一个参数。
     let r = context.fn(args)
     delete context.fn
     return r
