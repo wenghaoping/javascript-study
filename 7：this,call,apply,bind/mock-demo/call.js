@@ -21,14 +21,19 @@ Function.prototype.call4 = function (context) {
     delete context.fn;
     return result;
 };
-Function.prototype.myCall = function(context) {
-    context = context ? Object(context) : window
+Function.prototype.myCall2 = function (context) {
+    var context = context || window
+    // 给 context 添加一个属性
+    // getValue.call(a, 'yck', '24') => a.fn = getValue
     context.fn = this
-    let args = [...arguments].slice(1) // 获取第一个参数。
-    let r = context.fn(args)
+    // 将 context 后面的参数取出来
+    var args = [...arguments].slice(1)// 获取第一个参数。
+    // getValue.call(a, 'yck', '24') => a.fn('yck', '24')
+    var result = context.fn(...args)
+    // 删除 fn
     delete context.fn
-    return r
-}
+    return result
+  }
 var obj = {
     value: 1
 };
