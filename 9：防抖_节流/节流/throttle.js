@@ -39,7 +39,7 @@ function throttle(func, wait) {
 
 // 第三版
 function throttle(func, wait) {
-    var timeout, context, args, result;
+    var timeout, context, args;
     var previous = 0;
 
     var later = function() {
@@ -47,7 +47,6 @@ function throttle(func, wait) {
         timeout = null;
         func.apply(context, args)
     };
-
     var throttled = function() {
         var now = +new Date();
         //下次触发 func 剩余的时间

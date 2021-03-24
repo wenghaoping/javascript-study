@@ -49,9 +49,7 @@ function debounce(func, wait) {
 
 // 第四版
 function debounce(func, wait, immediate) {
-
     var timeout;
-
     return function () {
         var context = this;
         var args = arguments;

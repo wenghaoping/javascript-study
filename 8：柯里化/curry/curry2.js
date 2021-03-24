@@ -9,8 +9,7 @@ function curry(fn, length){
     return function(){
         if (length > 1) {
             return curry(sub_curry(fn), --length)
-        }
-        else {
+        } else {
             return fn()
         }
     }

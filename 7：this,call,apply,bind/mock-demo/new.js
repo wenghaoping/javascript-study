@@ -13,8 +13,8 @@ Otaku.prototype.sayYourName = function () {
 }
 
 function mockNew() {
-    let Constructor = [].shift.call(arguments); // 取出构造函数，第一个参数是构造函数
     let obj = {}   // new 执行会创建一个新对象
+    let Constructor = [].shift.call(arguments); // 取出构造函数，第一个参数是构造函数
     obj.__proto__ = Constructor.prototype 
     let ret = Constructor.apply(obj, arguments);
     return typeof ret === 'object' ? ret : obj;
@@ -26,7 +26,7 @@ function create() {
     let Con = [].shift.call(arguments)
     // 链接到原型
     obj.__proto__ = Con.prototype
-    // 绑定 this，执行构造函数
+    // 将构造函数 constructor中的this指向obj,并立即执行构造函数内部的操作
     let result = Con.apply(obj, arguments)
     // 确保 new 出来的是个对象
     return typeof result === 'object' ? result : obj

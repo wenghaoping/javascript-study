@@ -11,6 +11,7 @@ Function.prototype.call3 = function(context = window, ...args) {
 };
 // 如果不允许使用...
 Function.prototype.call4 = function (context) {
+        // this参数可以传null, 当为null的时候，视为指向 window
     var context = context || window;
     context.fn = this;
     var args = [];
@@ -22,6 +23,7 @@ Function.prototype.call4 = function (context) {
     return result;
 };
 Function.prototype.myCall2 = function (context) {
+    // this参数可以传null, 当为null的时候，视为指向 window
     var context = context || window
     // 给 context 添加一个属性
     // getValue.call(a, 'yck', '24') => a.fn = getValue
@@ -33,7 +35,7 @@ Function.prototype.myCall2 = function (context) {
     // 删除 fn
     delete context.fn
     return result
-  }
+}
 var obj = {
     value: 1
 };
