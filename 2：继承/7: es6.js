@@ -4,14 +4,14 @@ class Parent {
       this.y = y
     }
   }
-  class Child extends Parent {
-    constructor(x, y, name) {
-      super(x, y);//调用父类的constructor(x,y)
-      this.name = name;
-    }
+class Child extends Parent {
+  constructor(x, y, name) {
+    super(x, y);//调用父类的constructor(x,y)
+    this.name = name;
   }
-  var child1 = new Child("x", "y", "ccg");
-  console.log(child1);　　//Child {x: "x", y: "y", name: "ccg"}
+}
+var child1 = new Child("x", "y", "ccg");
+console.log(child1);　　//Child {x: "x", y: "y", name: "ccg"}
 
 
 // 父类
@@ -29,7 +29,7 @@ console.log(p1.showName);
 
 // 子类
 class children  extends Person{
-    constructor(agrs){
+    constructor(ags){
         super(ags) 
     }
  

@@ -40,11 +40,12 @@ function curry (fn, currArgs) {
     }
 }
 function sum(a, b, c) {
-    console.log(a, b, c);
+    // console.log(a, b, c);
+    return a + b + c;
     // console.log(a + b + c);
 }
 const fn = curry(sum);
-fn(1, 2, 3); // 6
+console.log(fn(1, 2, 3)) // 6
 fn(1, 2)(3); // 6
 // fn(1)(2, 3); // 6
 // fn(1)(2)(3); // 6

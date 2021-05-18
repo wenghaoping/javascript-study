@@ -1,16 +1,30 @@
-function log(){
-    console.log.apply(console, arguments);
-};
-function log2(){
-    console.log.call(console, ...arguments);
-};
-function log3(){
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift('(app)');
-    console.log.apply(console, args);
-};
-log(1); //1
-log(1,2); //1 2
-log2(1,2); //1 2
-log3(1, 2); //1 2
+Function.prototype.myCall = function(context, ...args) {
+    // 1: 把函数挂到目标对象上（这里的 this 就是我们要改造的的那个函数）
+    context.func = this
+    // 2: 执行函数
+    context.func(...args)
+    // 3: 删除 1 中挂到目标对象上的函数，把目标对象”完璧归赵”
+    delete context.func
+}
 
+
+
+var me = {
+    name: 'icon'
+  }
+  
+  function showName() {
+    console.log(this.name)
+  }
+  
+  showName.myCall(me) // icon
+
+
+
+
+  Function.prototype.myCall = function(context = window, ...args) {
+    context.fn = this;
+    let result = context.fn(...args);
+    delete context.fn;
+    return result;
+  }
