@@ -5,6 +5,7 @@
 //           if
 //         }
 //     }
+
 // // 2. （框架）用 react，vue 或 angular 完成自定义 select，
 // // 	要求支持前端搜索，点击时回调 （支持下拉懒加载加分）
 // vue.component('w-select' ,{
@@ -24,7 +25,7 @@
 // 					<span>{{selectValue.option}}</span>
 // 					<ul @click='show'>
 // 						<li v-for='(item, index) of items' @click='select(item)' :key='index'
-// 							v-show="selectShow">{{item.option}}</li>					
+// 							v-show="selectShow">{{item.option}}</li>
 // 					</ul>
 // 				</div>
 // 				`,
@@ -60,7 +61,7 @@
 //   			if(prefix[k] === suffix[k]) {
 //             	match[i] = prefix[k].length;
 //             }
-//         }   
+//         }
 //         if (!macth[i]) {
 //         	macth[i] = 0;
 //         }
@@ -80,7 +81,7 @@
 //               	break;
 //             } else {
 //           		i++;
-//             }          
+//             }
 //         } else {
 //         	if (m > 0 && macthValue[m - 1] > 0) {
 //             	m = macthValue[m - 1] - 1;
@@ -97,20 +98,13 @@
 // kmp('ASDFGGHQE', 'HQE');
 // // 4. （算法）找出 1000 以内能被 7 整除的所有奇数的平方和，用纯函数式 (FB) 的方式写
 
-function number () {
-    let sum = [];
-    for (let i = 0; i < 1000; i = i + 7) {
-      if (i % 2 !== 0) {
-        sum.push(i);
-      }
+function number() {
+  let sum = [];
+  for (let i = 0; i < 1000; i = i + 7) {
+    if (i % 2 !== 0) {
+      sum.push(i);
     }
-    return sum;
+  }
+  return sum;
 }
-console.log(number())
-              
-              
-              
-              
-              
-              
-              
+console.log(number());
