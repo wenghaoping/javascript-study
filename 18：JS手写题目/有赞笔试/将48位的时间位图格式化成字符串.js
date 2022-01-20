@@ -56,4 +56,4 @@ function timeBitmapToRanges(bitmap) {
     }
     return result;
 }
-console.log(timeBitmapToRanges2('000010100000000000000000000000000000000000000011'));
+console.log(timeBitmapToRanges2('100010100000000000000000000000000000000000000011'));

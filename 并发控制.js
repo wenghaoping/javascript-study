@@ -1,4 +1,5 @@
-//JS实现一个带并发限制的异步调度器Scheduler，保证同事运行的任务最多有两个。完善下面代码中的Scheduler类，使得以下程序能正确输出。
+//JS实现一个带并发限制的异步调度器Scheduler，
+// 保证同事运行的任务最多有两个。完善下面代码中的Scheduler类，使得以下程序能正确输出。
 
 class Scheduler {
     add(promiseCreator) {

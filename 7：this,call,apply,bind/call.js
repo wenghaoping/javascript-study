@@ -14,3 +14,10 @@ var a = {
 };
 
 a.func2()            // Cherry
+
+Function.prototype.mycall = function(context = window, ...args) {
+    context.fn = this;
+    let result = context.fn(...args);
+    delete context.fn;
+    return result;
+}

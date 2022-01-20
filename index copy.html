@@ -1,0 +1,38 @@
+<html>
+  <title>算法debug大法</title>
+  <body>
+    <div id="btn">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>7</button>
+    </div>
+    <script>
+      function debounce(fn, time) {
+        let lockTime = null;
+        return function(...args) {
+          clearTimeout(lockTime);
+          lockTime = setTimeout(() => {
+            fn(...args);
+          }, time)
+        }
+      }
+
+      function throttle(fn, time) {
+        let target = true;
+        return function(...args) {
+          if(target) {
+            target = false;
+            setTimeout(() => {
+              fn(...args);
+              target = true;
+            }, time);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -18,7 +18,7 @@ console.log(child1);　　//Child {x: "x", y: "y", name: "ccg"}
 class Person {
     constructor(name){
         console.log(`构造函数执行了,${name}`)
-        this.name=name
+        this.name=name
     }
     showName(){
         return `名字为${this.name}`

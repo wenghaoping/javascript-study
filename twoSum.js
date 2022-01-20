@@ -1,21 +1,36 @@
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
-    if(!Array.isArray(nums)) {
-        return false;
+class EventEmitter {
+  constructor() {
+    this.eventMap = [];
+  }
+  on(type, handler) {
+    if (!type || !handler) {
+      throw new Error("参数错误");
     }
-    for (let i = 0; i < nums.length; i++) {
-        for (let s = 0; s < nums.length; s++) {
-            if (nums[i] + nums[s + 1] === target && i !== s + 1) {
-                console.log(nums[i]);
-                console.log(nums[s + 1]);
-                
-                return [i, s + 1];
-            }
-        }
+    if (!(handler instanceof Function)) {
+      throw new Error("handler is not function");
     }
-};
-console.log(twoSum([2,5,5,11], 10));
+    if (!this.eventMap[type]) {
+      this.eventMap[type] = [];
+    }
+    this.eventMap[type].push(handler);
+  }
+  emit(type, params) {
+    if (!type) {
+      throw new Error("参数错误");
+    }
+    if (this.eventMap[type]) {
+      this.eventMap[type].forEach((handler) => {
+        handler(params);
+      });
+    }
+  }
+  off(type) {
+    if (!type) {
+      throw new Error("参数错误");
+    }
+    if (this.eventMap[type]) {
+        let index = this.eventMap[type].indexOf(handle)
+        this.eventMap[type].splice(index, 1)
+    }
+  }
+}

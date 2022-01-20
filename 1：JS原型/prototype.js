@@ -1,6 +1,6 @@
 function Foo() {
-    var a = 1
-};
+  var a = 1;
+}
 
 let f1 = new Foo();
 let f2 = new Foo();
@@ -12,19 +12,27 @@ let o2 = new Object();
 // console.log( f1.__proto__.__proto__ === Object.prototype );
 // console.log( f1.__proto__.__proto__.__proto__ === null );
 // console.log( f1.constructor === Foo.prototype.constructor);
-// console.log( Foo.prototype.constructor === Foo); 
-// console.log( Foo.prototype.__proto__ === Object.prototype); 
-console.log( Foo.__proto__ === Function.prototype); 
-console.log( Object.prototype.constructor === Object); 
-console.log( Object.prototype.__proto__ === null); 
-console.log( Object.__proto__ === Function.prototype); 
-// console.log( Function.__proto__ === Function.prototype); 
-// console.log( String.__proto__ === Function.prototype); 
-// console.log( Function.prototype.__proto__ === Object.prototype); 
+// console.log( Foo.prototype.constructor === Foo);
+// console.log( Foo.prototype.__proto__ === Object.prototype);
+console.log(Foo.__proto__ === Function.prototype);
+// console.log( Object.prototype.constructor === Object);
+// console.log( Object.prototype.__proto__ === null);
+// console.log( Object.__proto__ === Function.prototype);
+// console.log( Function.__proto__ === Function.prototype);
+// console.log( String.__proto__ === Function.prototype);
+// console.log( Function.prototype.__proto__ === Object.prototype);
 // console.log( Foo.__proto__ === Function.prototype);
 // console.log( o1.__proto__ === Object.prototype);
 // console.log( f1.__proto__ === f2.__proto__);
 // console.log(Function.prototype.__proto__.__proto__);
+
+function Person() {
+  var a = 1;
+}
+let person1 = new Person();
+let person2 = new Person();
+let o1 = new Object();
+let o2 = new Object();
 
 // 每个对象的__proto__都是指向它的构造函数的原型对象prototype的
 // person1.__proto__ === Person.prototype

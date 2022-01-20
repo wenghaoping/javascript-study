@@ -12,3 +12,6 @@ console.log(Person.prototype.constructor == Person) // true
 // 顺便学习一个ES5的方法,可以获得对象的原型
 // 方法返回指定对象的原型 ( 即, 内部[[Prototype]]属性）。
 console.log(Object.getPrototypeOf(person) === Person.prototype) // true
+
+
+

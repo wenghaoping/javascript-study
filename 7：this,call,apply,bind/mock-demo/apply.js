@@ -3,7 +3,7 @@ Function.prototype.apply2 = function(context = window, args) {
     let result;
     //判断是否有第二个参数
     result = context.fn(...args);
-    delete context.fn();
+    delete context.fn;
     return result;
 }
 Function.prototype.myApply = function (context) {

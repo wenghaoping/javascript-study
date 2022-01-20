@@ -9,7 +9,9 @@ EventEmitter.prototype.on = function (eventName, handle) {
     this.handlers[eventName].push(handle)
 }
 //也是监听事件，但只能被触发一次
-EventEmitter.prototype.once = function (eventName, handle) {}
+EventEmitter.prototype.once = function (eventName, handle) {
+    
+}
 //触发指定的事件
 EventEmitter.prototype.fire = function (eventName, ...params) {
     if (!this.handlers.hasOwnProperty(eventName)) return

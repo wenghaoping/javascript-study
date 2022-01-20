@@ -1,24 +1,24 @@
 // 为了方便大家阅读，在这里重复一下组合继承的代码：
 
-function Parent (name) {
-    this.name = name;
-    this.colors = ['red', 'blue', 'green'];
+function Parent(name) {
+  this.name = name;
+  this.colors = ["red", "blue", "green"];
 }
 
 Parent.prototype.getName = function () {
-    console.log(this.name)
-}
+  console.log(this.name);
+};
 
-function Child (name, age) {
-    Parent.call(this, name);
-    this.age = age;
+function Child(name, age) {
+  Parent.call(this, name);
+  this.age = age;
 }
 
 Child.prototype = new Parent();
 
-var child1 = new Child('kevin', '18');
+var child1 = new Child("kevin", "18");
 
-console.log(child1)
+console.log(child1);
 // 组合继承最大的缺点是会调用两次父构造函数。
 
 // 一次是设置子类型实例的原型的时候：
@@ -26,7 +26,7 @@ console.log(child1)
 Child.prototype = new Parent();
 // 一次在创建子类型实例的时候：
 
-var child1 = new Child('kevin', '18');
+var child1 = new Child("kevin", "18");
 // 回想下 new 的模拟实现，其实在这句中，我们会执行：
 
 Parent.call(this, name);
@@ -40,18 +40,18 @@ Parent.call(this, name);
 
 // 看看如何实现：
 
-function Parent (name) {
-    this.name = name;
-    this.colors = ['red', 'blue', 'green'];
+function Parent(name) {
+  this.name = name;
+  this.colors = ["red", "blue", "green"];
 }
 
 Parent.prototype.getName = function () {
-    console.log(this.name)
-}
+  console.log(this.name);
+};
 
-function Child (name, age) {
-    Parent.call(this, name);
-    this.age = age;
+function Child(name, age) {
+  Parent.call(this, name);
+  this.age = age;
 }
 
 // 关键的三步
@@ -61,22 +61,21 @@ F.prototype = Parent.prototype;
 
 Child.prototype = new F();
 
-
-var child1 = new Child('kevin', '18');
+var child1 = new Child("kevin", "18");
 
 console.log(child1);
-// 最后我们封装一下这个继承方法：
+// 最后我们封装一下这个继承方法：==========================================================================================
 
 function object(o) {
-    function F() {}
-    F.prototype = o;
-    return new F();
+  function F() {}
+  F.prototype = o;
+  return new F();
 }
 
 function prototype(child, parent) {
-    var prototype = object(parent.prototype);
-    prototype.constructor = child;
-    child.prototype = prototype;
+  var prototype = object(parent.prototype);
+  prototype.constructor = child;
+  child.prototype = prototype;
 }
 
 // 当我们使用的时候：
