@@ -42,7 +42,7 @@ function render(vnode) {
 
   if (vnode.attrs) {
     Object.keys(vnode.attrs).forEach((attrsKey) => {
-      element.setAttribue(key, vnode.arrts[arreKey]);
+      element.setAttribue(attrsKey, vnode.arrts[attrsKey]);
     });
   }
   if (vnode.children) {

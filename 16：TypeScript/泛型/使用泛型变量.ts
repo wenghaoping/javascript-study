@@ -8,7 +8,7 @@ function loggingIdentity<T>(arg: T): T {
 
 // 现在假设我们想操作T类型的数组而不直接是T。由于我们操作的是数组，所以.length属性是应该存在的。 我们可以像创建其它数组一样创建这个数组：
 
-function loggingIdentity2<T>(arg: T[]): T[] {
+function loggingIdentity2<T extends Array<T>>(arg: T): T[] {
     console.log(arg.length);  // Array has a .length, so no more error
     return arg;
 }

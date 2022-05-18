@@ -19,6 +19,6 @@ function identity2(arg: any): any {
 
 function identity3<T>(arg: T): T {
     return arg;
-}
+} 
 
 let output = identity3<string>("myString");
