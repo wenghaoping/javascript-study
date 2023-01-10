@@ -14,3 +14,4 @@ Function.prototype.myApply = function (context, args) {
   // 6: 返回结果值
   return result;
 };
+

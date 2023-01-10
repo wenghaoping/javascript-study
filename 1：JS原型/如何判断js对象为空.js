@@ -1,5 +1,5 @@
 function goodEmptyCheck(value) {
-    return Object.keys(value).length === 0 && value.constructor === Object;
+  return Object.keys(value).length === 0 && value.constructor === Object;
 }
 
 console.log(goodEmptyCheck(new Object())); // true
@@ -15,7 +15,9 @@ console.log(goodEmptyCheck(null)); // TypeError
 console.log(goodEmptyCheck(undefined)); // TypeError
 
 function goodEmptyCheck2(value) {
-    return value && Object.keys(value).length === 0 && value.constructor === Object;
+  return (
+    value && Object.keys(value).length === 0 && value.constructor === Object
+  );
 }
 console.log(goodEmptyCheck2(null)); // TypeError
 console.log(goodEmptyCheck2(undefined)); // TypeError
